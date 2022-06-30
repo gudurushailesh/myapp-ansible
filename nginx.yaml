@@ -1,7 +1,7 @@
 ---
 - name: Install nginx
   hosts: slave1
-  remote_user: hugo995
+  remote_user: ubuntu
   become: yes
   
   tasks:
@@ -15,7 +15,7 @@
       src: index.html
       dest: /usr/share/nginx/html/index.html
       
-  - name: restart nginx
+  - name: Restart nginx
     service:
        name: nginx
        state: restarted
