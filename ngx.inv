@@ -1,2 +1,2 @@
 [slave1]
-3.109.208.223
+3.109.208.223 ansible_user=ubuntu 
