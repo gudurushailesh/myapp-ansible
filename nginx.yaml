@@ -1,14 +1,9 @@
---- 
-- 
-  hosts: web:vars
-  tasks: 
-    - 
-      apt: 
-        name: nginx
-        state: present
-      name: "Install NginX"
-    - 
-      name: "Start Nginx Services"
-      service: 
-        name: nginx
-        state: started
+---
+- hosts: all
+  tasks:
+    - name: ensure nginx is at the latest version
+      apt: name=nginx state=latest
+    - name: start nginx
+      service:
+          name: nginx
+          state: started
