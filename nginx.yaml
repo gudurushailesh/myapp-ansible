@@ -1,9 +1,22 @@
 ---
-- hosts: all
+- name: Install nginx
+  hosts: all
+  remote_user: hugo995
+  become: yes
+  
   tasks:
-    - name: ensure nginx is at the latest version
-      apt: name=nginx state=latest
-    - name: start nginx
-      service:
-          name: nginx
-          state: started
+  - name: Install nginx
+    yum:
+      name: nginx
+      state: latest
+      
+  - name: copy web page template
+    template:
+      src: index.html
+      dest: /usr/share/nginx/html/index.html
+  
+  - name: start nginx
+    service:
+       name: nginx
+       state: started
+      
