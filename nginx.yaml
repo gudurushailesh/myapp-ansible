@@ -1,6 +1,6 @@
 ---
 - name: Install nginx
-  hosts: all
+  hosts: slave1
   remote_user: hugo995
   become: yes
   
