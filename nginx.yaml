@@ -15,8 +15,8 @@
       src: index.html
       dest: /usr/share/nginx/html/index.html
       
-  - name: Restart nginx
+  - name: Start nginx
     service:
        name: nginx
-       state: restarted
+       state: started
       
