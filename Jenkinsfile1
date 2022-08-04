@@ -9,7 +9,7 @@ pipeline {
         }
         stage('ansible') {
             steps {
-                ansiblePlaybook credentialsId: 'ssh', disableHostKeyChecking: true, installation: 'ansible', inventory: 'dev.inv', playbook: 'apache1.yml'
+                sh'ansiblePlaybook credentialsId: 'ssh', disableHostKeyChecking: true, installation: 'ansible', inventory: 'dev.inv', playbook: 'apache1.yml''
             }
         }
     }
